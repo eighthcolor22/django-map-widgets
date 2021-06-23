@@ -10,7 +10,6 @@ from django.utils.http import urlencode
 
 from mapwidgets.constants import STATIC_MAP_PLACEHOLDER_IMAGE
 from mapwidgets.settings import MapWidgetSettings, mw_settings
-from mapwidgets.key_receivers import get_google_maps_api_key
 
 
 def minify_if_not_debug(asset):
@@ -70,7 +69,7 @@ class GooglePointFieldWidget(BasePointFieldMapWidget):
 
         js = [
             "https://maps.googleapis.com/maps/api/js?libraries={}&language={}&key={}".format(
-                mw_settings.LIBRARIES, mw_settings.LANGUAGE, get_google_maps_api_key()
+                mw_settings.LIBRARIES, mw_settings.LANGUAGE, mw_settings.GOOGLE_MAP_API_KEY
             )
         ]
 
