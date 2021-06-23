@@ -68,7 +68,7 @@ class MapWidgetSettings(object):
 
         if 'constance' in django_settings.INSTALLED_APPS:
             from constance import config
-            google_map_api_key = getattr(config, GOOGLE_MAP_API_KEY, None)
+            google_map_api_key = getattr(config, 'GOOGLE_MAP_API_KEY', None)
             if google_map_api_key:
                 self.defaults['GOOGLE_MAP_API_KEY'] = google_map_api_key
 
